@@ -1,0 +1,39 @@
+canvas {
+    margin: auto;
+    display: block;
+    border-color: #840032;
+}
+
+header {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    margin: auto;
+    border-color: #840032;
+    /* border-style: dotted; */
+    background: #002642;
+    color: #840032;
+    vertical-align:  middle;
+}
+
+#duration {
+    text-align: center;
+    margin:auto;
+    font-size: 4em;
+}
+
+#music, #openInfo, #restart {
+    width: 4em;
+}
+
+#info, #restart, #sound {
+    text-align: center;
+    margin:auto;
+}
+
+.button.selected {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.button {
+    background-color: rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Minesweeper</title>
+		<link rel='stylesheet' href= 'style.css'/>
+	</head>
+	<body>
+		<header id='header'>
+			<div id="duration">0</div>
+			<div id="sound">
+				<div class="button selected">
+					<img id="music" src="music.png">
+				</div>
+			</div>
+			<div id="info">
+				<img id="openInfo" src="info.png">
+			</div>
+			<div id="restart">
+				<img id="restart" src="restart.svg">
+			</div>
+		</header>
+		<canvas id='canvas'></canvas>
+		<script type="text/javascript" src="sound.js"></script>
+		<script type="text/javascript" src="timerController.js"></script>
+		<script type="text/javascript" src="minesweeper.js"></script>
+		<script type="text/javascript" src="render.js"></script>
+		<script type="text/javascript" src="controller.js"></script>
+	</body>
+</html>
