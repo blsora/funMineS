@@ -72,10 +72,10 @@ function renderBlock (x,y) {
     if (state[y][x] == STATE_OPENED) {
         ctx.fillStyle = '#E5DADA';
     } else {
-        ctx.fillStyle = '#E59500';
+        ctx.fillStyle = '#C9B1BD';
     }
     
-    ctx.strokeStyle = 'black';
+    ctx.strokeStyle = '#B49594';
     ctx.fillRect(viewCoordinates.x, viewCoordinates.y, BLOCK_W, BLOCK_H);
     ctx.strokeRect(viewCoordinates.x, viewCoordinates.y, BLOCK_W, BLOCK_H);
     

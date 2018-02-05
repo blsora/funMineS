@@ -10,7 +10,7 @@ header {
     margin: auto;
     border-color: #840032;
     /* border-style: dotted; */
-    background: #002642;
+    background: #D5DFE5;
     color: #840032;
     vertical-align:  middle;
 }
@@ -36,4 +36,49 @@ header {
 
 .button {
     background-color: rgba(255, 255, 255, 0.7);
+}
+
+popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    background-color: #D5DFE5;
+    padding: 1em;
+    border-radius: 0.5em;
+    border: 1px solid #7F9172;
+    display: grid;
+    grid-template-rows: 33% 33% 33%;
+    width: 30em;
+}
+
+#title {
+    font-size: 3em;
+    text-align: center;
+    color: #567568;
+}
+
+#text {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1em; 
+}
+
+#buttons {
+    font-size: 1.5em;
+    text-align: center;
+    padding-top: 1em;   
+}
+
+button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 0.5em;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+.hidden {
+    visibility: hidden;
 }

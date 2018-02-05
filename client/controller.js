@@ -41,13 +41,17 @@ canvas.addEventListener('mousedown', function(e) {
     render();
 
     return false;
-  } else {
-    gameRestart();
-  }
+  } 
 });
 
+var restart = false;
 var restartButton = document.querySelector('#restart');
-restartButton.addEventListener("touchstart", () => gameRestart(), false);
+restartButton.addEventListener("touchstart", function (e) {
+	e.stopPropagation();
+	e.preventDefault();
+	restart = true;
+	gameRestart();	
+}, false);
 
 var onlongtouch;
 var timer;
@@ -99,3 +103,5 @@ soundButton.addEventListener('touchstart', function() {
 infoButton.addEventListener('touchstart', function() {
    alert("Info: One touch opens the block \n long touch places the flags \n Happy Fun Mines! :)");
 });
+
+
