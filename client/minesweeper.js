@@ -9,45 +9,7 @@ var STATE_CLOSED = 0,
 var BLOCK_MINE = -1;
 
 var playing = true;
-var victory = false;
 
-var popup = document.querySelector("popup").classList;
-var yes = document.querySelector("#yes");
-var no = document.querySelector("#no");
-
-yes.addEventListener("touchstart", function (e) {
-	e.stopPropagation();
-	e.preventDefault();
-	gameRestart();	
-}, false);
-no.addEventListener("touchstart", function(e) {
-	e.stopPropagation();
-    e.preventDefault();
-	showPopup();
-}, false);
-
-function showPopup() {
-	/* victory */
-	if (popup.contains("hidden") && victory) {
-		document.querySelector("#title").innerText = "You are awesome :)";
-		popup.remove("hidden");
-		stopTimer();
-	} 
-	/* fail */
-	else if (popup.contains("hidden") && !victory) {
-		popup.remove("hidden");
-		/* restart request*/ 
-		if (restart) {
-			document.querySelector("#title").innerText = " ";
-			restart = false;
-		}
-		stopTimer();
-	} 
-	else {
-		popup.add("hidden");
-		document.querySelector("#title").innerText = "Game Over :(";
-	}
-}
 
 function inBounds(x, y) {
 	return x >= 0 && y >= 0
@@ -114,12 +76,11 @@ function openBlock(x, y) {
 	if (state[y][x] == STATE_FLAGGED) {
 		return;
 	}
-	
-	/* GAME OVER */
+
 	if (board[y][x] == BLOCK_MINE) {
+		alert('Game Over!')
 		revealBoard(false);
 		playSadSound();
-		setTimeout(showPopup, 2000);
 		playing = false;
 		stopTimer();
 		return;
@@ -140,13 +101,11 @@ function openBlock(x, y) {
 			}
 		} 
 	}
-	
-	/* VICTORY */
+
 	if (checkVictory()) {
-		victory = true;
+		alert('You are awesome! :)');
 		revealBoard(true);
 		playVictorySound();
-		setTimeout(showPopup, 2000);
 		playing = false;
 		stopTimer();
 	}
@@ -168,14 +127,16 @@ function checkVictory() {
 }
 
 function gameRestart() {
-	board = [];
-	state = [];
-	stopTimer();
-	init();
-	render();
-	playing = true;
-	victory = false;
-	showPopup();
+	if (confirm('You wanna play another one?')) {
+		board = [];
+		state = [];
+		init();
+		render();
+		playing = true;
+
+	} else {
+		return;
+	}
 }
 
 function flagBlock(x, y) {
