@@ -1,0 +1,98 @@
+body
+{
+    margin:0;
+}
+canvas 
+{
+    margin: 0;
+    width: 100%;
+    display: block;
+    border-color: #840032;
+}
+
+header 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: auto;
+    border-color: #840032;
+    background: #002642;
+    color: #840032;
+
+    --h:10vh;
+    height:var(--h);
+}
+
+.duration
+{
+    text-align: center;
+    margin:     auto;
+    font-size:  auto;
+}
+
+header > *
+{
+    flex: 0 0 25%;
+    text-align: center;
+    font-size:calc((var(--h) / 3) * 2);
+}
+
+.button.selected 
+{
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.button 
+{
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* buttons and icons */
+@font-face 
+{
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?qx7l23');
+  src:  url('fonts/icomoon.eot?qx7l23#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?qx7l23') format('truetype'),
+    url('fonts/icomoon.woff?qx7l23') format('woff'),
+    url('fonts/icomoon.svg?qx7l23#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-flag:before {
+  content: "\e901";
+}
+.icon-bomb:before {
+  content: "\e900";
+}
+.icon-restart:before {
+  content: "\e984";
+}
+.icon-info:before {
+  content: "\ea0c";
+}
+.icon-sound:before {
+  content: "\ea26";
+}
+.icon-mute:before {
+  content: "\ea2a";
+}
